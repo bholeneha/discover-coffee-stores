@@ -3,9 +3,16 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
+import Banner from "../components/banner"
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const handleOnBannerBtnClick = () => {
+    console.log("Banner Btn Clicked!")
+  }
+
   return (
     <>
       <Head>
@@ -16,7 +23,7 @@ export default function Home() {
       </Head>
 
       <main className={`${styles.main} ${inter.className}`}>
-        <h1>Coffee Connoisseur</h1>
+        <Banner buttonText="View stores near by" handleOnClick={handleOnBannerBtnClick} />
       </main>
 
       <footer>
